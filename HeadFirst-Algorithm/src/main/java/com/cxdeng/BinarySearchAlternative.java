@@ -1,6 +1,7 @@
 package com.cxdeng;
 
 public class BinarySearchAlternative {
+
     /**
      * @param arr    待查找的升序数组
      * @param target 待查找的目标值
