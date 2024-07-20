@@ -5,11 +5,11 @@ public class BinarySearch {
 
     /**
      * BinarySearch Basic
-     * @param arr Array to be searched
+     *
+     * @param arr    Array to be searched
      * @param target Target value
-     * @return
-     *  If find the target, return index
-     *  else return -1
+     * @return If find the target, return index
+     * else return -1
      */
     public static int binarySearchBasic(int[] arr, int target) {
 
@@ -33,11 +33,11 @@ public class BinarySearch {
 
     /**
      * BinarySearch Alternative
-     * @param arr Array to be searched
+     *
+     * @param arr    Array to be searched
      * @param target Target value
-     * @return
-     *  If find the target, return index
-     *  else return -1
+     * @return If find the target, return index
+     * else return -1
      */
     public static int binarySearchAlternative(int[] arr, int target) {
 
@@ -53,6 +53,28 @@ public class BinarySearch {
             } else {
                 return mid;
             }
+        }
+
+        return -1;
+    }
+
+
+    public static int binarySearchBalance(int[] arr, int target) {
+
+        int left = 0;
+        int right = arr.length;
+
+        while (right - left > 1) {
+            int mid = left + (right - left) / 2;
+            if (target < arr[mid]) {
+                right = mid;
+            } else {
+                left = mid;
+            }
+        }
+
+        if (arr[left] == target) {
+            return left;
         }
 
         return -1;
