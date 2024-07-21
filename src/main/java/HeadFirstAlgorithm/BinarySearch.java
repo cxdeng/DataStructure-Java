@@ -8,8 +8,8 @@ public class BinarySearch {
      *
      * @param arr    Array to be searched
      * @param target Target value
-     * @return If find the target, return index
-     * else return -1
+     * @return If find the target, return index,
+     *      else return -1
      */
     public static int binarySearchBasic(int[] arr, int target) {
 
@@ -36,8 +36,8 @@ public class BinarySearch {
      *
      * @param arr    Array to be searched
      * @param target Target value
-     * @return If find the target, return index
-     * else return -1
+     * @return If find the target, return index,
+     *      else return -1
      */
     public static int binarySearchAlternative(int[] arr, int target) {
 
@@ -59,6 +59,13 @@ public class BinarySearch {
     }
 
 
+    /**
+     * BinarySearch Balance
+     * @param arr Array to be searched
+     * @param target Target value
+     * @return If find the target, return index,
+     *      else return -1
+     */
     public static int binarySearchBalance(int[] arr, int target) {
 
         int left = 0;
@@ -78,6 +85,36 @@ public class BinarySearch {
         }
 
         return -1;
+    }
+
+
+    /**
+     * BinarySearch Balance
+     * @param arr Array to be searched
+     * @param target Target value
+     * @return If find the target, return index,
+     *         Otherwise, (-(insertion point) - 1)
+     */
+    public static int binarySearchJava(int[] arr, int target) {
+
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left <= right) {
+            int mid = (left + right) >>> 1;
+            int midVal = arr[mid];
+
+            if (target < midVal) {
+                right = mid - 1;
+            } else if (target > midVal) {
+                left = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+
+        // Key not found
+        return -(left + 1);
     }
 
 }

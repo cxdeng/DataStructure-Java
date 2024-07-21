@@ -46,6 +46,14 @@ class BinarySearchTest {
 
 
     @Test
+    void binarySearchAlternativeNotFound() {
+        assertEquals(-1, binarySearchAlternative(arr, 0));
+        assertEquals(-1, binarySearchAlternative(arr, 15));
+        assertEquals(-1, binarySearchAlternative(arr, 60));
+    }
+
+
+    @Test
     void binarySearchBalanceFound() {
         assertEquals(0, binarySearchBalance(arr, 7));
         assertEquals(1, binarySearchBalance(arr, 13));
@@ -67,9 +75,22 @@ class BinarySearchTest {
 
 
     @Test
-    void binarySearchAlternativeNotFound() {
-        assertEquals(-1, binarySearchAlternative(arr, 0));
-        assertEquals(-1, binarySearchAlternative(arr, 15));
-        assertEquals(-1, binarySearchAlternative(arr, 60));
+    void binarySearchJavaFound() {
+        assertEquals(0, binarySearchJava(arr, 7));
+        assertEquals(1, binarySearchJava(arr, 13));
+        assertEquals(2, binarySearchJava(arr, 21));
+        assertEquals(3, binarySearchJava(arr, 30));
+        assertEquals(4, binarySearchJava(arr, 38));
+        assertEquals(5, binarySearchJava(arr, 44));
+        assertEquals(6, binarySearchJava(arr, 52));
+        assertEquals(7, binarySearchJava(arr, 53));
+    }
+
+
+    @Test
+    void binarySearchJavaNotFound() {
+        assertEquals(-1, binarySearchJava(arr, 0));
+        assertEquals(-3, binarySearchJava(arr, 15));
+        assertEquals(-9, binarySearchJava(arr, 60));
     }
 }
