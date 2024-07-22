@@ -1,6 +1,5 @@
 package HeadFirstAlgorithm;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static HeadFirstAlgorithm.BinarySearch.*;
@@ -10,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class BinarySearchTest {
 
     private static final int[] arr = new int[]{7, 13, 21, 30, 38, 44, 52, 53};
+
+    private static final int[] theMostArr = new int[]{1, 2, 4, 4, 4, 5, 6, 6, 7};
 
 
     @Test
@@ -92,5 +93,81 @@ class BinarySearchTest {
         assertEquals(-1, binarySearchJava(arr, 0));
         assertEquals(-3, binarySearchJava(arr, 15));
         assertEquals(-9, binarySearchJava(arr, 60));
+    }
+
+
+    @Test
+    void binarySearchLeftMostFound() {
+        assertEquals(0, binarySearchLeftMost(theMostArr, 1));
+        assertEquals(1, binarySearchLeftMost(theMostArr, 2));
+        assertEquals(2, binarySearchLeftMost(theMostArr, 4));
+        assertEquals(5, binarySearchLeftMost(theMostArr, 5));
+        assertEquals(6, binarySearchLeftMost(theMostArr, 6));
+        assertEquals(8, binarySearchLeftMost(theMostArr, 7));
+    }
+
+
+    @Test
+    void binarySearchLeftMostNotFound() {
+        assertEquals(-1, binarySearchLeftMost(theMostArr, 0));
+        assertEquals(-1, binarySearchLeftMost(theMostArr, 3));
+        assertEquals(-1, binarySearchLeftMost(theMostArr, 8));
+    }
+
+
+    @Test
+    void binarySearchRightMostFound() {
+        assertEquals(0, binarySearchLRightMost(theMostArr, 1));
+        assertEquals(1, binarySearchLRightMost(theMostArr, 2));
+        assertEquals(4, binarySearchLRightMost(theMostArr, 4));
+        assertEquals(5, binarySearchLRightMost(theMostArr, 5));
+        assertEquals(7, binarySearchLRightMost(theMostArr, 6));
+        assertEquals(8, binarySearchLRightMost(theMostArr, 7));
+    }
+
+
+    @Test
+    void binarySearchLRightMostNotFound() {
+        assertEquals(-1, binarySearchLRightMost(theMostArr, 0));
+        assertEquals(-1, binarySearchLRightMost(theMostArr, 3));
+        assertEquals(-1, binarySearchLRightMost(theMostArr, 8));
+    }
+
+
+    @Test
+    void binarySearchLeftMostAdvancedFound() {
+        assertEquals(0, binarySearchLeftMostAdvanced(theMostArr, 1));
+        assertEquals(1, binarySearchLeftMostAdvanced(theMostArr, 2));
+        assertEquals(2, binarySearchLeftMostAdvanced(theMostArr, 4));
+        assertEquals(5, binarySearchLeftMostAdvanced(theMostArr, 5));
+        assertEquals(6, binarySearchLeftMostAdvanced(theMostArr, 6));
+        assertEquals(8, binarySearchLeftMostAdvanced(theMostArr, 7));
+    }
+
+
+    @Test
+    void binarySearchLeftMostAdvancedNotFound() {
+        assertEquals(0, binarySearchLeftMostAdvanced(theMostArr, 0));
+        assertEquals(2, binarySearchLeftMostAdvanced(theMostArr, 3));
+        assertEquals(9, binarySearchLeftMostAdvanced(theMostArr, 8));
+    }
+
+
+    @Test
+    void binarySearchRightMostAdvancedFound() {
+        assertEquals(0, binarySearchLRightMostAdvanced(theMostArr, 1));
+        assertEquals(1, binarySearchLRightMostAdvanced(theMostArr, 2));
+        assertEquals(4, binarySearchLRightMostAdvanced(theMostArr, 4));
+        assertEquals(5, binarySearchLRightMostAdvanced(theMostArr, 5));
+        assertEquals(7, binarySearchLRightMostAdvanced(theMostArr, 6));
+        assertEquals(8, binarySearchLRightMostAdvanced(theMostArr, 7));
+    }
+
+
+    @Test
+    void binarySearchRightMostAdvancedNotFound() {
+        assertEquals(-1, binarySearchLRightMostAdvanced(theMostArr, 0));
+        assertEquals(1, binarySearchLRightMostAdvanced(theMostArr, 3));
+        assertEquals(8, binarySearchLRightMostAdvanced(theMostArr, 8));
     }
 }
