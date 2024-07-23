@@ -1,4 +1,4 @@
-package LeetCode;
+package LeetCode.BinarySearch;
 
 public class SearchInsertPosition_35 {
     public int searchInsert(int[] nums, int target) {

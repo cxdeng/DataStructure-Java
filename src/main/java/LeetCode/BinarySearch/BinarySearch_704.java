@@ -1,4 +1,4 @@
-package LeetCode;
+package LeetCode.BinarySearch;
 
 public class BinarySearch_704 {
     public int search(int[] nums, int target) {
